@@ -45,6 +45,7 @@ class Book(CreatedModifiedAbstract):
     publisher = models.CharField(max_length=50)
     authors = models.ManyToManyField('book.Author', through='book.BookAuthor')
     lang = models.CharField(max_length=50)
+    
     edition = models.SmallIntegerField(null=True, blank=True)
     book_format = models.CharField(max_length=2, choices=BOOK_FORMAT, default='eb')
     tags = models.ManyToManyField('book.Tag')
